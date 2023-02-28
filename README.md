@@ -62,7 +62,7 @@
 - **[html]**
 - **[css]**
 - **[Javascript]**
-- **[css animation]**
+- **[webpack]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -91,7 +91,7 @@ To know simple html, css, npm, and linter.
 
 Clone this repository to your desired folder:
 cd my-folder
-git clone https://github.com/AbdusSattar-70/Awesome-book.git
+git clone https://github.com/Rishi-Mishra0704/to-do-list
 
 ### Install
 

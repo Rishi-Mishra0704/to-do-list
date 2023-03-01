@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
-import css from './index.css';
+import './index.css';
 
-const todoList = document.getElementById('todo-container');
-
+const todo = document.getElementById('todo-list');
 const tasks = [
   {
     index: 1,
@@ -27,7 +26,7 @@ const fillList = () => {
         <input class="checkbox" type="checkbox" name="" value="">
         <span>${item.description}</span>
         `;
-    todoList.appendChild(listItem);
+    todo.appendChild(listItem);
   });
 };
 fillList();

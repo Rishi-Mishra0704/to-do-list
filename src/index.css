@@ -9,7 +9,7 @@ body {
   font-weight: normal;
 }
 
-ul {
+.todo-container {
   padding: 0;
   margin: 0;
 }
@@ -55,8 +55,7 @@ li,
   border: none;
 }
 
-.clear-btn:hover,
 .clear-btn:active {
-  background-color: antiquewhite;
+  text-decoration: underline;
   cursor: pointer;
 }

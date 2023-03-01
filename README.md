@@ -1,9 +1,9 @@
-# Awesome book
+# to-do list
 
 <a name="readme-top"></a>
 
 <div align="center">
- <h3><b>Awesome-book is my demo project for learning  js object and arrays </b></h3>
+ <h3><b>To-do list is my demo project for learning  webpack and module bundling </b></h3>
 
 </div>
 
@@ -36,9 +36,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Awesome book] <a name="about-project"></a>
+# 📖 [to-do list] <a name="about-project"></a>
 
-**[Awesome book]** is a part of the learning purpose that I made to how to use js object and arrays best practices.
+**[to-do list]** is a part of the learning purpose that I made to how to use js object and arrays best practices.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -48,7 +48,10 @@
   <summary>Client</summary>
   <b>This project only works client side right now.</b>
   <ul>
-    <li>HTML, CSS and JS</li>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JAVASCRIPT</li>
+    <li>WEBPACK</li>
   </ul>
 </details>
 
@@ -59,7 +62,7 @@
 - **[html]**
 - **[css]**
 - **[Javascript]**
-- **[css animation]**
+- **[webpack]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -88,7 +91,7 @@ To know simple html, css, npm, and linter.
 
 Clone this repository to your desired folder:
 cd my-folder
-git clone https://github.com/AbdusSattar-70/Awesome-book.git
+git clone https://github.com/Rishi-Mishra0704/to-do-list
 
 ### Install
 

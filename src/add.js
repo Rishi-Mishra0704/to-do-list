@@ -1,72 +1,79 @@
-/*eslint-disable */
-import { Todo } from "./Todo.js";
+import Todo from './Todo.js';
 
-
-export const fillList = () => {
+export function fillList() {
   const todoList = document.getElementById('todo-list');
- 
+  todoList.innerHTML = '';
+
   Todo.list.forEach((item) => {
     const listItem = document.createElement('li');
-    listItem.setAttribute('id',item.index)
-    listItem.classList = "item-container";
+    listItem.setAttribute('id', item.index);
+    listItem.classList = 'item-container';
+
     listItem.innerHTML = `
-          <input class='checkbox' type='checkbox' name='' value=''>
-          <span>${item.description}</span>
-          <textarea class="text-area" maxlength="30">${item.description}</textarea>
-          <button type = "button">&CircleTimes;</button>
-          `;
+      <input class="checkbox" type="checkbox">
+      <span>${item.description}</span>
+      <textarea class="text-area" maxlength="30">${item.description}</textarea>
+      <button type ="button" id="delete">&CircleTimes;</button>
+      `;
+
     todoList.appendChild(listItem);
-    const checkbox = listItem.querySelector("input");
-  const text = listItem.querySelector("span");
-  const textInput = listItem.querySelector("textarea");
-  const deleteButton = listItem.querySelector("img");
-  checkbox.addEventListener("change", () => {
-    const index = parseInt(listItem.id, 10);
-    Todo.list[index].update();
-    text.classList.toggle("complete");
-    textInput.classList.toggle("complete");
-    localStorage.setItem("todoList", JSON.stringify(Todo.list));
-  });
-  textInput.addEventListener("click", () => {
-    text.style.display = "none";
-    textInput.classList.toggle("edit-item");
-  });
-  textInput.addEventListener("keydown", (e) => {
-    text.innerHTML = textInput.value;
 
-    const index = parseInt(listItem.id, 10);
-    Todo.list[index].description = text.innerHTML;
+    const checkbox = listItem.querySelector('input');
+    const text = listItem.querySelector('span');
+    const textInput = listItem.querySelector('textarea');
+    const deleteButton = listItem.querySelector('#delete');
 
-    localStorage.setItem("todoList", JSON.stringify(Todo.list));
+    checkbox.addEventListener('change', () => {
+      const index = parseInt(listItem.id, 10);
+      Todo.list[index].update();
+      text.classList.toggle('complete');
+      textInput.classList.toggle('complete');
+      localStorage.setItem('todoList', JSON.stringify(Todo.list));
+    });
 
-    if (e.code === "Enter") {
-      text.style.display = "block";
-      textInput.classList.toggle("edit-item");
+    text.addEventListener('click', () => {
+      text.style.display = 'none';
+      textInput.classList.toggle('edit-item');
+    });
+
+    textInput.addEventListener('keydown', (e) => {
+      text.innerHTML = textInput.value;
+
+      const index = parseInt(listItem.id, 10);
+      Todo.list[index].description = text.innerHTML;
+
+      localStorage.setItem('todoList', JSON.stringify(Todo.list));
+
+      if (e.code === 'Enter') {
+        text.style.display = 'block';
+        textInput.classList.toggle('edit-item');
+      }
+    });
+
+    deleteButton.addEventListener('click', () => {
+      const index = parseInt(listItem.id, 10);
+      Todo.list = Todo.list.filter((item) => item !== Todo.list[index]);
+      Todo.list.forEach((item, i) => { item.index = i; });
+      localStorage.setItem('todoList', JSON.stringify(Todo.list));
+      fillList();
+    });
+
+    if (item.complete) {
+      checkbox.checked = true;
+      text.classList = 'complete';
     }
   });
-  image.addEventListener("click", () => {
-    const index = parseInt(listItem.id, 10);
-    Todo.list = Todo.list.filter((item) => item !== Todo.list[index]);
-    Todo.list.forEach((item, i) => { item.index = i; });
-    localStorage.setItem("todoList", JSON.stringify(Todo.list));
-    populateList();
-  });
-  if (item.complete) {
-    checkbox.checked = true;
-    text.classList = "complete";
-  }
-  });
-};
+}
+
 export function add(e) {
-  if (e.code === "Enter") {
-    // Create new item
+  if (e.code === 'Enter') {
+
     const newItem = new Todo(this.value, false);
 
-    // Update local storage
-    localStorage.setItem("todoList", JSON.stringify(newItem.getList()));
+    localStorage.setItem('todoList', JSON.stringify(newItem.getList()));
 
-    // Update UI
-    this.value = "";
+    this.value = '';
     fillList();
   }
 }
+

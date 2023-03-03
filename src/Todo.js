@@ -1,19 +1,19 @@
-/* eslint-disable*/
-
-export class Todo {
-   constructor(description,completed = false){
+class Todo {
+  constructor(description, complete = false) {
     this.description = description;
-    this.completed = completed;
+    this.complete = complete;
     this.index = Todo.list.length;
-    Todo.list.push(this)
+    Todo.list.push(this);
     this.getList = () => Todo.list;
-   }
-   update() {
-    if (this.completed) {
-      this.completed = false;
+  }
+
+  update() {
+    if (this.complete) {
+      this.complete = false;
     } else {
-      this.completed = true;
+      this.complete = true;
     }
   }
 }
-Todo.list = []
+Todo.list = []; // Initialize the static list variable outside the class
+export default Todo;

@@ -67,7 +67,6 @@ export function fillList() {
 
 export function add(e) {
   if (e.code === 'Enter') {
-
     const newItem = new Todo(this.value, false);
 
     localStorage.setItem('todoList', JSON.stringify(newItem.getList()));
@@ -76,4 +75,3 @@ export function add(e) {
     fillList();
   }
 }
-

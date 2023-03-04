@@ -68,7 +68,9 @@
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo and presentation video <a name="live-demo"></a>
+## 🚀 Live Demo and presentation video <a name="live-demo">
+ <a href="https://rishi-mishra0704.github.io/to-do-list/dist/">Live Demo</a>
+</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

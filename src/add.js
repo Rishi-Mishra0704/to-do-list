@@ -75,3 +75,9 @@ export function add(e) {
     fillList();
   }
 }
+export function deleteAll() {
+  Todo.list = Todo.list.filter((item) => item.complete === false);
+  Todo.list.forEach((item, i) => { item.index = i; });
+  localStorage.setItem('todoList', JSON.stringify(Todo.list));
+  fillList();
+}
